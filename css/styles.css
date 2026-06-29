@@ -534,3 +534,142 @@ figcaption {
 
 /* utilities */
 .mt-s { margin-top: 8px; }
+
+/* =========================================================
+   SECTION 7 — PROPOSAL（既存トークン・視覚言語を踏襲。新規は proposal- にスコープ）
+   ========================================================= */
+
+/* --- 図表① 提案フロー --- */
+.proposal-flow { display: block; }
+
+.proposal-banner {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--tan-soft);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 16px;
+}
+.proposal-banner__tag {
+  flex: 0 0 auto;
+  font-size: .76rem; font-weight: 700; letter-spacing: .04em;
+  color: #fff; background: var(--tan);
+  border-radius: 999px; padding: 2px 12px;
+}
+.proposal-banner p { font-weight: 500; }
+
+.proposal-stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--blue-soft);
+  border: 1px solid rgba(68, 114, 196, .20);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.proposal-stage--goal { background: var(--blue-box); border-color: rgba(47, 75, 124, .25); }
+.proposal-stage__no {
+  flex: 0 0 auto;
+  font-family: var(--font-geo); font-weight: 700;
+  font-size: .76rem; letter-spacing: .06em;
+  color: var(--blue-deep);
+  background: #fff;
+  border: 1px solid rgba(47, 75, 124, .22);
+  border-radius: 999px;
+  padding: 3px 12px;
+  margin-top: 2px;
+}
+.proposal-stage__body b { display: block; font-size: 1rem; }
+.proposal-stage__body span { display: block; font-size: .9rem; color: var(--muted); margin-top: 2px; }
+
+.proposal-tag {
+  display: inline-block;
+  font-size: .72rem; font-weight: 700;
+  color: #fff; background: var(--tan);
+  border-radius: 999px; padding: 1px 10px;
+  margin-left: 6px; vertical-align: middle;
+}
+.proposal-tag--goal { background: var(--blue-deep); }
+
+.proposal-arrow {
+  text-align: center;
+  color: var(--muted);
+  line-height: 1;
+  padding: 10px 0;
+}
+.proposal-arrow--label {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.proposal-arrow--label .mark { display: block; }
+.proposal-arrow--label em {
+  font-style: normal;
+  font-size: .82rem;
+  color: var(--muted);
+}
+
+/* STEP 2 の枝分かれ */
+.proposal-branch { display: grid; gap: 12px; margin: 2px 0; }
+@media (min-width: 760px) { .proposal-branch { grid-template-columns: repeat(3, 1fr); } }
+.proposal-bcard {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.proposal-bcard--fast  { background: var(--blue-soft); }
+.proposal-bcard--heavy { background: var(--grey-soft); border-color: var(--line); }
+.proposal-bcard--mod   { background: var(--tan-soft); }
+.proposal-badge {
+  display: inline-block;
+  font-size: .72rem; font-weight: 700;
+  border-radius: 999px; padding: 2px 10px;
+  margin-bottom: 10px;
+}
+.proposal-badge--fast  { background: #fff; color: var(--blue-deep); }
+.proposal-badge--heavy { background: #fff; color: var(--muted); }
+.proposal-badge--mod   { background: var(--tan); color: #fff; }
+.proposal-bcard__cause { font-weight: 700; font-size: .96rem; }
+.proposal-bcard__sol   { font-size: .92rem; margin-top: 2px; }
+
+/* 別レーン：レアケース */
+.proposal-rare {
+  margin-top: 18px;
+  background: var(--tan-soft);
+  border: 1px solid #e6d3bd;
+  border-radius: var(--radius);
+  padding: 18px 22px;
+}
+.proposal-rare__tag {
+  display: inline-block;
+  font-size: .72rem; font-weight: 700;
+  color: var(--tan);
+  background: #fff; border: 1px solid #e6d3bd;
+  border-radius: 999px; padding: 2px 12px;
+  margin-bottom: 8px;
+}
+.proposal-rare b { color: var(--ink); }
+
+.proposal-note {
+  margin-top: 12px;
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* 図表② マッピング表（voc-table を流用し、4列幅のみ調整） */
+@media (min-width: 860px) {
+  .proposal-map td.layer { width: 22%; }
+  .proposal-map td.data  { width: 26%; }
+}
+
+/* 設計の前提（4原則チップ） */
+.proposal-principles { display: grid; gap: 12px; }
+@media (min-width: 680px) { .proposal-principles { grid-template-columns: 1fr 1fr; } }
+.proposal-chip {
+  background: var(--grey-soft);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.proposal-chip b { display: block; }
+.proposal-chip span { display: block; font-size: .88rem; color: var(--muted); margin-top: 2px; }
