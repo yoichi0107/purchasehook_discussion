@@ -43,12 +43,12 @@ python3 -m http.server 8000
 
 ## 画像の差し替え
 
-`images/` には現在 **プレースホルダ（SVG・単色＋ラベル）** が入っています。実画像に差し替える場合は以下のいずれかで対応してください。
+`images/` のうち、店頭の棚写真（`drugstore-shelf.jpg`）は**実写真を設置済み**です。ヒーロー背景と構成図は **プレースホルダ（SVG）** が入っています。実画像に差し替える場合は以下で対応してください。
 
 | ファイル | 用途 | 差し替え方法 |
 |---|---|---|
 | `images/hero-desk.svg` | ヒーロー背景（机まわりの写真想定） | 既定では「白背景＋淡いアクセント」表示。写真を使う場合は `images/hero-desk.jpg` を置き、`css/styles.css` の `.hero` の `background-image` を白い薄スクリム＋`url("../images/hero-desk.jpg")` に差し替える（該当箇所にコメントあり） |
-| `images/drugstore-shelf.svg` | 店頭の棚写真 | `images/drugstore-shelf.jpg` を置き、`index.html` の該当 `<img src>` を `.jpg` に変更 |
+| `images/drugstore-shelf.jpg` | 店頭の棚写真 | **実写真を設置済み**（ドラッグストアの洗顔・スキンケア棚）。別の写真に変えたい場合は同名で上書き |
 | `images/framework-diagram.svg` | 全体構成図（PCで表示） | 元スライドの構成図 `framework-diagram.png` を置き、`index.html` の該当 `<img src>` / `<a href>` を `.png` に変更 |
 
 > `framework-diagram.svg` はスライドの構成図を再現したベクター版です。元のスライド画像（PNG）を使いたい場合のみ差し替えてください。モバイル表示はファイルに依存しないネイティブHTML版なので、画像差し替えの影響を受けません。
