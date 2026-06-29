@@ -1,0 +1,536 @@
+/* =========================================================
+   パーチェイスフック理論 LP — styles.css
+   トンマナ：白地・黒文字・青とテラコッタのアクセント。
+   装飾は最小限（淡い塗り＋薄い境界＋余白で区切る）。
+   ========================================================= */
+
+:root {
+  --bg:        #FFFFFF;
+  --ink:       #141414;
+  --muted:     #595959;
+  --blue:      #4472C4;
+  --blue-deep: #2F4B7C;
+  --blue-soft: #DAE3F3;
+  --blue-box:  #BDD7EE;
+  --tan:       #C0844C;
+  --tan-soft:  #F3E7D8;
+  --tan-box:   #E8A269;
+  --line:      #E3E3E3;
+  --grey-soft: #F2F2F2;
+  --radius:    14px;
+
+  --shadow:    0 1px 3px rgba(20, 20, 20, .08);
+
+  --maxw:      1120px;
+  --gutter:    20px;
+
+  --font-jp: "Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --font-geo: "Poppins", var(--font-jp);
+}
+
+/* ---------- reset / base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-jp);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3, h4 { line-height: 1.5; font-weight: 700; margin: 0; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+a { color: var(--blue-deep); }
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* numeric / latin headings get the geometric face */
+.num, .geo { font-family: var(--font-geo); font-weight: 700; font-feature-settings: "palt"; }
+
+/* ---------- layout helpers ---------- */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: 72px; }
+.section + .section { border-top: 1px solid var(--line); }
+
+.eyebrow {
+  font-family: var(--font-geo);
+  font-weight: 700;
+  letter-spacing: .14em;
+  font-size: .82rem;
+  color: var(--blue);
+  margin: 0 0 10px;
+}
+.eyebrow.tan { color: var(--tan); }
+
+.section h2 {
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  letter-spacing: .01em;
+  margin: 0 0 14px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.02rem;
+  max-width: 60ch;
+  margin: 0 0 36px;
+}
+
+/* ---------- fade-in (IntersectionObserver) ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s ease, transform .6s ease;
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 86svh;
+  padding-block: 96px 72px;
+  /* 実写真がある場合：下の linear-gradient を白い薄スクリムにし、
+     url("../images/hero-desk.jpg") を background に重ねる（README参照）。
+     プレースホルダ運用の現状は「白背景＋淡いアクセント」。 */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(120% 90% at 88% 8%, var(--blue-soft) 0%, rgba(218,227,243,0) 42%),
+    radial-gradient(110% 80% at 6% 100%, var(--tan-soft) 0%, rgba(243,231,216,0) 46%);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.hero__inner { max-width: 60ch; }
+.hero h1 {
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  line-height: 1.3;
+  letter-spacing: .01em;
+  margin: 0 0 18px;
+}
+.hero__sub {
+  font-size: clamp(1.02rem, 3.4vw, 1.3rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.hero__meta {
+  font-size: .9rem;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--muted);
+  font-family: var(--font-geo);
+  font-size: .72rem;
+  letter-spacing: .2em;
+  text-decoration: none;
+}
+.scroll-cue .arrow {
+  font-size: 1.2rem;
+  animation: bob 1.8s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@media (prefers-reduced-motion: reduce) { .scroll-cue .arrow { animation: none; } }
+
+/* =========================================================
+   generic cards / surfaces
+   ========================================================= */
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 28px;
+  background: var(--bg);
+}
+.card h3 { font-size: 1.1rem; margin: 0 0 12px; }
+.surf-grey { background: var(--grey-soft); border-color: transparent; }
+.surf-blue { background: var(--blue-soft); border-color: transparent; }
+.surf-tan  { background: var(--tan-soft);  border-color: transparent; }
+
+.card ul.bullets { display: grid; gap: 10px; }
+.card ul.bullets li { position: relative; padding-left: 1.1em; }
+.card ul.bullets li::before {
+  content: "";
+  position: absolute; left: 0; top: .72em;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--muted);
+}
+
+/* two-column compare */
+.compare { display: grid; gap: 18px; }
+@media (min-width: 768px) { .compare { grid-template-columns: 1fr 1fr; gap: 24px; } }
+.compare h3 { display: flex; align-items: baseline; gap: .5em; }
+
+/* =========================================================
+   SECTION 2 — purchase flow + photo
+   ========================================================= */
+.flowgrid { display: grid; gap: 28px; }
+@media (min-width: 900px) {
+  .flowgrid { grid-template-columns: 1fr 1fr; align-items: start; gap: 40px; }
+  .flowgrid .flow-photo { order: 2; }
+  .flowgrid .flow-steps { order: 1; }
+}
+
+.flow-steps { display: grid; gap: 10px; }
+.flow-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--blue-soft);
+}
+.flow-row.is-entry { background: var(--tan-soft); }
+.flow-row .marker {
+  flex: 0 0 auto;
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  font-family: var(--font-geo);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--blue-deep);
+}
+.flow-row.is-entry .marker { color: var(--tan); }
+.flow-row .label { flex: 1; font-weight: 500; }
+.flow-row .badge {
+  flex: 0 0 auto;
+  font-size: .76rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--tan);
+  border-radius: 999px;
+  padding: 2px 12px;
+  letter-spacing: .04em;
+}
+
+figure { margin: 0; }
+figure img { border-radius: var(--radius); border: 1px solid var(--line); }
+figcaption {
+  margin-top: 10px;
+  font-size: .86rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.flow-conclusion {
+  margin-top: 30px;
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  background: var(--tan-soft);
+  border-left: 4px solid var(--tan);
+}
+.flow-conclusion p { font-weight: 500; }
+.flow-conclusion strong { color: var(--tan); }
+
+/* =========================================================
+   SECTION 3 — framework diagram (image vs native HTML)
+   ========================================================= */
+.diagram-image { margin: 0; text-align: center; }
+.diagram-image a { display: inline-block; }
+.diagram-image img {
+  width: 100%;
+  max-width: 1000px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.diagram-image figcaption { text-align: left; max-width: 1000px; margin-inline: auto; }
+
+/* show image on >=900, native html below */
+.diagram-native { display: block; }
+.diagram-image  { display: none; }
+@media (min-width: 900px) {
+  .diagram-native { display: none; }
+  .diagram-image  { display: block; }
+}
+
+/* native html diagram */
+.fw {
+  display: grid;
+  gap: 18px;
+}
+.fw__pillar {
+  background: var(--tan-box);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.fw__pillar .ttl { font-size: 1.3rem; font-weight: 700; margin-bottom: 4px; }
+.fw__pillar .ttl small { display: block; font-size: .9rem; font-weight: 500; }
+.fw__pillar ul { display: grid; gap: 10px; margin: 14px 0; }
+.fw__pillar li { background: rgba(255,255,255,.55); border-radius: 10px; padding: 10px 14px; font-size: .92rem; }
+.fw__pillar li b { display: block; }
+.fw__pillar .note { font-size: .84rem; color: #5b3c1d; }
+
+.fw__connect { display: grid; gap: 10px; }
+.fw__connect .cbox {
+  background: var(--tan-soft);
+  border: 1px solid #e6d3bd;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.fw__connect .cbox b { display: block; }
+.fw__connect .cbox span { font-size: .84rem; color: var(--muted); }
+.fw__connect .down { text-align: center; color: var(--tan); font-weight: 700; line-height: 1; }
+
+.fw__loop {
+  text-align: center;
+  font-size: .86rem;
+  color: var(--blue-deep);
+  background: var(--blue-soft);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+.fw__loop::before { content: "↑ "; }
+
+.fw__stack { display: grid; gap: 8px; }
+.fw__step {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--blue-box);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.fw__step .n {
+  flex: 0 0 auto;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #fff; color: var(--blue-deep);
+  display: grid; place-items: center;
+  font-family: var(--font-geo); font-weight: 700;
+}
+.fw__step .t { font-weight: 700; color: var(--blue-deep); }
+.fw__core {
+  border: 2px dashed var(--blue-deep);
+  border-radius: 12px;
+  padding: 8px;
+  display: grid; gap: 8px;
+  position: relative;
+}
+.fw__core .x {
+  text-align: center; font-weight: 700; color: var(--ink);
+  font-size: 1.1rem; line-height: 1;
+}
+.fw__core .x small { display:block; font-size:.72rem; color: var(--blue-deep); font-weight:700; }
+
+/* =========================================================
+   SECTION 4 — parts card grid
+   ========================================================= */
+.parts { display: grid; gap: 18px; }
+@media (min-width: 680px) { .parts { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1024px){ .parts { grid-template-columns: repeat(3, 1fr); } }
+
+.part {
+  display: flex; flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+.part.span-2 { grid-column: 1 / -1; }
+@media (min-width: 1024px){ .part.span-2 { grid-column: span 2; } }
+
+.part__head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.part__mark {
+  flex: 0 0 auto;
+  width: 34px; height: 34px; border-radius: 9px;
+  display: grid; place-items: center;
+  font-family: var(--font-geo); font-weight: 700; font-size: 1.05rem;
+  background: var(--blue-soft); color: var(--blue-deep);
+}
+.part.is-thought .part__mark { background: var(--tan-soft); color: var(--tan); border-radius: 50%; }
+.part__name { font-size: 1.08rem; font-weight: 700; }
+.part__role { color: var(--muted); font-size: .92rem; margin-bottom: 14px; }
+.part .bullets { display: grid; gap: 9px; margin-bottom: 18px; }
+.part .bullets li { position: relative; padding-left: 1.1em; font-size: .94rem; }
+.part .bullets li::before {
+  content:""; position:absolute; left:0; top:.72em;
+  width:6px; height:6px; border-radius:50%; background: var(--blue);
+}
+.part.is-thought .bullets li::before { background: var(--tan); }
+.part__key {
+  margin-top: auto;
+  background: var(--blue-soft);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: .9rem;
+  font-weight: 500;
+}
+.part__key b { color: var(--blue-deep); }
+.part.is-thought .part__key { background: var(--tan-soft); }
+.part.is-thought .part__key b { color: var(--tan); }
+
+/* =========================================================
+   SECTION 5 — HOW steps + levers
+   ========================================================= */
+.howgrid { display: grid; gap: 28px; }
+@media (min-width: 900px) { .howgrid { grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; } }
+
+.steps { display: grid; gap: 14px; }
+.step {
+  background: var(--blue-soft);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.step .step__no {
+  font-family: var(--font-geo); font-weight: 700;
+  color: var(--blue-deep); font-size: .8rem; letter-spacing: .1em;
+}
+.step h3 { font-size: 1.02rem; margin: 2px 0 6px; }
+.step p { font-size: .92rem; color: var(--muted); }
+
+.levers {
+  background: var(--grey-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+.levers h3 { font-size: 1.1rem; margin: 0 0 6px; }
+.levers .levers__lead { font-size: .9rem; color: var(--muted); margin-bottom: 16px; }
+.levers ol { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; counter-reset: lever; }
+.levers ol li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: .94rem;
+}
+.levers ol li::before {
+  counter-increment: lever;
+  content: counter(lever);
+  flex: 0 0 auto;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: #fff; color: var(--blue-deep);
+  display: grid; place-items: center;
+  font-family: var(--font-geo); font-weight: 700; font-size: .82rem;
+}
+
+/* =========================================================
+   SECTION 6 — VOC
+   ========================================================= */
+.voc-banner {
+  background: var(--tan-soft);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 40px;
+}
+.voc-banner p { font-weight: 500; }
+.voc-banner strong { color: var(--tan); }
+
+.subhead { font-size: 1.15rem; font-weight: 700; margin: 0 0 16px; }
+.block { margin-bottom: 48px; }
+
+/* contribution table -> cards on mobile */
+.voc-table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.voc-table thead { display: none; }
+.voc-table tr {
+  display: grid; gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+.voc-table td { padding: 0; border: 0; }
+.voc-table td[data-h]::before {
+  content: attr(data-h);
+  display: block;
+  font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+  color: var(--muted); text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.voc-table td.layer { font-weight: 700; color: var(--blue-deep); }
+.voc-table tr.is-top { background: var(--tan-soft); border-color: #e6d3bd; }
+.voc-table tr.is-top td.layer { color: var(--tan); }
+
+@media (min-width: 860px) {
+  .voc-table { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .voc-table thead { display: table-header-group; }
+  .voc-table thead th {
+    background: var(--grey-soft); text-align: left; font-size: .82rem;
+    padding: 14px 18px; color: var(--ink); border-bottom: 1px solid var(--line);
+  }
+  .voc-table tr { display: table-row; border: 0; border-radius: 0; padding: 0; margin: 0; }
+  .voc-table tbody tr { border-bottom: 1px solid var(--line); }
+  .voc-table tbody tr:last-child { border-bottom: 0; }
+  .voc-table td { display: table-cell; padding: 16px 18px; vertical-align: top; }
+  .voc-table td[data-h]::before { display: none; }
+  .voc-table td.layer { width: 26%; }
+  .voc-table td.data { width: 30%; color: var(--muted); font-size: .86rem; }
+}
+
+/* two modes */
+.modes { display: grid; gap: 18px; }
+@media (min-width: 768px) { .modes { grid-template-columns: 1fr 1fr; gap: 24px; } }
+.mode { border-radius: var(--radius); padding: 24px; }
+.mode.a { background: var(--blue-soft); }
+.mode.b { background: var(--grey-soft); }
+.mode h4 { font-size: 1.04rem; margin: 0 0 6px; }
+.mode .mode__tag { font-size: .8rem; color: var(--muted); margin-bottom: 14px; }
+.mode .flowline { font-size: .94rem; margin-bottom: 14px; }
+.mode .deliver { font-size: .86rem; color: var(--muted); border-top: 1px solid rgba(0,0,0,.08); padding-top: 12px; }
+.mode .deliver b { color: var(--ink); }
+
+/* discipline */
+.discipline { background: var(--tan-soft); border-radius: var(--radius); padding: 26px; }
+.discipline h3 { font-size: 1.1rem; margin: 0 0 14px; }
+.discipline ul { display: grid; gap: 14px; }
+.discipline li { padding-left: 1.2em; position: relative; font-size: .94rem; }
+.discipline li::before {
+  content: "—"; position: absolute; left: 0; color: var(--tan); font-weight: 700;
+}
+.discipline li b { color: var(--tan); }
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-block: 40px;
+  color: var(--muted);
+  font-size: .88rem;
+}
+.site-footer p { margin: 0; }
+
+/* utilities */
+.mt-s { margin-top: 8px; }

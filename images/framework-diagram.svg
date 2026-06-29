@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1080" viewBox="0 0 1900 1080" role="img" aria-label="パーチェイスフック理論の全体構成図">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C0844C"/>
+    </marker>
+    <marker id="arrowB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4472C4"/>
+    </marker>
+    <marker id="arrowN" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2F4B7C"/>
+    </marker>
+  </defs>
+
+  <rect width="1900" height="1080" fill="#FFFFFF"/>
+
+  <!-- left notes -->
+  <g fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="22">
+    <text x="40" y="360">OC的思想と</text>
+    <text x="40" y="392">SP的思想の2種類がある</text>
+    <text x="40" y="452" font-weight="700">例：</text>
+    <text x="40" y="496" font-weight="700">・OC的思想</text>
+    <text x="40" y="528">「創業者の思い」</text>
+    <text x="40" y="588" font-weight="700">・SP的思想</text>
+    <text x="40" y="620">「国産素材と無添加に</text>
+    <text x="40" y="652">　徹底的にこだわった」</text>
+    <text x="40" y="720">思想の強度が高くなると</text>
+    <text x="40" y="752">SP的な思想でも</text>
+    <text x="40" y="784">ブランド化してOC的になる</text>
+  </g>
+
+  <!-- 思想 pillar -->
+  <rect x="360" y="70" width="210" height="820" rx="6" fill="#E8A269"/>
+  <text x="465" y="450" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="52" font-weight="700" text-anchor="middle">思想</text>
+  <text x="465" y="510" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="30" text-anchor="middle">ナラティブ</text>
+
+  <!-- middle promise boxes -->
+  <rect x="610" y="720" width="230" height="120" rx="6" fill="#E8A269"/>
+  <text x="725" y="772" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="middle">ブランド共通の</text>
+  <text x="725" y="806" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="middle">プロミス</text>
+  <text x="612" y="880" fill="#595959" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="18">SKUの集合体としての</text>
+  <text x="612" y="906" fill="#595959" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="18">ブランドが何を約束するのか</text>
+
+  <rect x="890" y="720" width="230" height="120" rx="6" fill="#E8A269"/>
+  <text x="1005" y="772" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="middle">商品ごと</text>
+  <text x="1005" y="806" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="26" font-weight="700" text-anchor="middle">役割</text>
+  <text x="892" y="880" fill="#595959" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="18">ポートフォリオ内での</text>
+  <text x="892" y="906" fill="#595959" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="18">商品ごとの役割を明確に</text>
+
+  <text x="610" y="700" fill="#595959" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="18">思想やナラティブをブランドとしての一貫性に落とし込む</text>
+
+  <!-- flow arrows (terracotta) -->
+  <line x1="570" y1="780" x2="608" y2="780" stroke="#C0844C" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="840" y1="780" x2="888" y2="780" stroke="#C0844C" stroke-width="4" marker-end="url(#arrow)"/>
+  <line x1="1120" y1="780" x2="1188" y2="820" stroke="#C0844C" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <!-- right stack (blue) -->
+  <g font-family="'Noto Sans JP', Helvetica, sans-serif" text-anchor="middle">
+    <!-- dotted box around 2 & 3 -->
+    <rect x="1180" y="455" width="320" height="250" rx="10" fill="none" stroke="#2F4B7C" stroke-width="2" stroke-dasharray="6 6"/>
+
+    <rect x="1200" y="60"  width="290" height="110" rx="6" fill="#BDD7EE"/>
+    <text x="1345" y="108" fill="#2F4B7C" font-size="28" font-weight="700">ブランド</text>
+    <text x="1345" y="144" fill="#2F4B7C" font-size="28" font-weight="700">ロイヤリティ</text>
+
+    <rect x="1200" y="200" width="290" height="110" rx="6" fill="#BDD7EE"/>
+    <text x="1345" y="248" fill="#2F4B7C" font-size="28" font-weight="700">時間経過の</text>
+    <text x="1345" y="284" fill="#2F4B7C" font-size="28" font-weight="700">効果実感</text>
+
+    <rect x="1200" y="340" width="290" height="110" rx="6" fill="#BDD7EE"/>
+    <text x="1345" y="388" fill="#2F4B7C" font-size="28" font-weight="700">初動の</text>
+    <text x="1345" y="424" fill="#2F4B7C" font-size="28" font-weight="700">効果実感</text>
+
+    <rect x="1200" y="468" width="290" height="100" rx="6" fill="#BDD7EE"/>
+    <text x="1345" y="530" fill="#2F4B7C" font-size="34" font-weight="700">PoD</text>
+
+    <text x="1345" y="588" fill="#141414" font-size="30" font-weight="700">×</text>
+
+    <rect x="1200" y="600" width="290" height="100" rx="6" fill="#BDD7EE"/>
+    <text x="1345" y="662" fill="#2F4B7C" font-size="28" font-weight="700">自己実現的価値</text>
+
+    <rect x="1200" y="760" width="290" height="110" rx="6" fill="#BDD7EE"/>
+    <text x="1345" y="826" fill="#2F4B7C" font-size="30" font-weight="700">フック</text>
+  </g>
+
+  <!-- number circles -->
+  <g font-family="'Noto Sans JP', Helvetica, sans-serif" text-anchor="middle">
+    <circle cx="1200" cy="80"  r="22" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/><text x="1200" y="89" fill="#2F4B7C" font-size="24" font-weight="700">6</text>
+    <circle cx="1200" cy="220" r="22" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/><text x="1200" y="229" fill="#2F4B7C" font-size="24" font-weight="700">5</text>
+    <circle cx="1200" cy="360" r="22" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/><text x="1200" y="369" fill="#2F4B7C" font-size="24" font-weight="700">4</text>
+    <circle cx="1200" cy="490" r="22" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/><text x="1200" y="499" fill="#2F4B7C" font-size="24" font-weight="700">3</text>
+    <circle cx="1200" cy="622" r="22" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/><text x="1200" y="631" fill="#2F4B7C" font-size="24" font-weight="700">2</text>
+    <circle cx="1200" cy="780" r="22" fill="#FFFFFF" stroke="#2F4B7C" stroke-width="2"/><text x="1200" y="789" fill="#2F4B7C" font-size="24" font-weight="700">1</text>
+  </g>
+
+  <!-- up arrows between stack boxes -->
+  <g stroke="#4472C4" stroke-width="4">
+    <line x1="1345" y1="760" x2="1345" y2="708" marker-end="url(#arrowB)"/>
+    <line x1="1345" y1="468" x2="1345" y2="456" marker-end="url(#arrowB)"/>
+    <line x1="1345" y1="340" x2="1345" y2="312" marker-end="url(#arrowB)"/>
+    <line x1="1345" y1="200" x2="1345" y2="172" marker-end="url(#arrowB)"/>
+  </g>
+
+  <!-- loop arrow 6 -> pillar -->
+  <path d="M1345,60 L1345,25 L465,25 L465,68" fill="none" stroke="#2F4B7C" stroke-width="3" marker-end="url(#arrowN)"/>
+  <text x="900" y="55" fill="#141414" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="24" text-anchor="middle">ここが積み上がると思想の強度が高くなる</text>
+
+  <!-- right annotations -->
+  <g fill="#595959" font-family="'Noto Sans JP', Helvetica, sans-serif" font-size="19">
+    <text x="1520" y="100">手放せない“お守り”のような</text>
+    <text x="1520" y="126">存在になっていく</text>
+    <text x="1520" y="240">時間が経過し、実際に“効いてる”</text>
+    <text x="1520" y="266">効果実感を想定した設計</text>
+    <text x="1520" y="380">擬似的・なんとなくでも</text>
+    <text x="1520" y="406">「効いてそう」を感じてもらう設計</text>
+    <text x="1520" y="510">自己実現価値を実現するPoDは何か</text>
+    <text x="1520" y="536">（ここはRTBとセット）</text>
+    <text x="1520" y="640">機能的価値→情緒的価値</text>
+    <text x="1520" y="666">→自己実現的価値</text>
+    <text x="1520" y="815">何で勝つのか、手に取りたいと</text>
+    <text x="1520" y="841">まず思わせるツカミ</text>
+  </g>
+</svg>

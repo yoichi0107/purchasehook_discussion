@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パーチェイスフック理論 概要 ＋ VOC活用案</title>
+  <meta name="description" content="通販ブランドが「売れ続ける」ための構造理論——パーチェイスフック理論の概要と、VOC（顧客の声）を活用した実装案。ディスカッション用資料。">
+  <meta name="color-scheme" content="light">
+
+  <!-- 外部依存は Google Fonts のみ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ============================ 0. HERO ============================ -->
+<header class="hero" id="top">
+  <div class="wrap hero__inner reveal">
+    <h1>パーチェイスフック理論</h1>
+    <p class="hero__sub">通販ブランドが「売れ続ける」ための構造理論 ＋ VOC活用案</p>
+    <p class="hero__meta">ディスカッション用資料 ／ 2026年6月</p>
+  </div>
+  <a class="scroll-cue" href="#why-1" aria-label="本文へスクロール">
+    <span>SCROLL</span>
+    <span class="arrow" aria-hidden="true">↓</span>
+  </a>
+</header>
+
+<main>
+
+<!-- ============================ 1. WHY 前提 ============================ -->
+<section class="section" id="why-1" aria-labelledby="why-1-h">
+  <div class="wrap">
+    <p class="eyebrow">WHY</p>
+    <h2 id="why-1-h" class="reveal">なぜパーチェイスフック理論が必要か</h2>
+    <p class="lead reveal">「使ってもらえれば良さがわかる」── 多くの企業が抱える前提の落とし穴。</p>
+
+    <div class="compare reveal">
+      <article class="card surf-grey">
+        <h3>企業の思い込み</h3>
+        <ul class="bullets">
+          <li>良い商品を作れば売れる。</li>
+          <li>とにかく一度使ってもらえれば、その良さは必ず伝わる。</li>
+          <li>だから入口（手に取らせる設計）は後回しでよい。</li>
+        </ul>
+      </article>
+      <article class="card surf-blue">
+        <h3>実際に起きていること</h3>
+        <ul class="bullets">
+          <li>良さを体験する母数に、そもそも届かない。</li>
+          <li>使う“前”の入口で、ほとんどの見込み客は離脱する。</li>
+          <li>商品力が高いほど「作れば売れる」を信じ、入口への投資が遅れる。</li>
+          <li>体験の質より前に、“体験に入ってもらう確率”を設計する必要がある。</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 2. WHY フック ============================ -->
+<section class="section" id="why-2" aria-labelledby="why-2-h">
+  <div class="wrap">
+    <p class="eyebrow">WHY</p>
+    <h2 id="why-2-h" class="reveal">「手に取るきっかけ」が必要</h2>
+    <p class="lead reveal">購買は一連の流れ。入口（①目に留まる・②手に取る）が弱いケースが多い。</p>
+
+    <div class="flowgrid reveal">
+      <figure class="flow-photo">
+        <img src="images/drugstore-shelf.svg" width="1000" height="1200" loading="lazy"
+             alt="ドラッグストアの棚に多数のスキンケア商品がびっしり並んでいる様子">
+        <figcaption>店頭で並べたら、いくら良い商品でもパッと見つけるのは難しい。</figcaption>
+      </figure>
+
+      <ol class="flow-steps">
+        <li class="flow-row is-entry"><span class="marker num">1</span><span class="label">目に留まる</span><span class="badge">入口</span></li>
+        <li class="flow-row is-entry"><span class="marker num">2</span><span class="label">手に取る</span><span class="badge">入口</span></li>
+        <li class="flow-row"><span class="marker num">3</span><span class="label">見比べる</span></li>
+        <li class="flow-row"><span class="marker num">4</span><span class="label">レジに持って行く</span></li>
+        <li class="flow-row"><span class="marker num">5</span><span class="label">使う</span></li>
+        <li class="flow-row"><span class="marker num">6</span><span class="label">良さを感じる</span></li>
+        <li class="flow-row"><span class="marker num">7</span><span class="label">リピートする</span></li>
+      </ol>
+    </div>
+
+    <div class="flow-conclusion reveal">
+      <p>商品力（③〜⑦）に自信があっても、①②が弱いと⑤以降に到達しない。<br>
+      <strong>フック＝①②を突破する「ツカミ」。設計対象として独立させる。</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 3. WHAT 全体構成 ============================ -->
+<section class="section" id="what-1" aria-labelledby="what-1-h">
+  <div class="wrap">
+    <p class="eyebrow">WHAT</p>
+    <h2 id="what-1-h" class="reveal">パーチェイスフック理論の構成</h2>
+    <p class="lead reveal">縦柱＝思想。①フックは商品企画の中で②③・仕様と同時設計され、④→⑤→⑥と積み上がり、⑥が思想を強化してループする。</p>
+
+    <!-- desktop: image -->
+    <figure class="diagram-image reveal">
+      <a href="images/framework-diagram.svg" target="_blank" rel="noopener" aria-label="構成図を等倍で開く">
+        <img src="images/framework-diagram.svg" width="1900" height="1080" loading="lazy"
+             alt="パーチェイスフック理論の全体構成図。左に思想ナラティブの縦柱、中央にブランド共通のプロミスと商品ごと役割、右に①フックから⑥ブランドロイヤリティまでの積み上げスタックがあり、⑥から思想へループする。">
+      </a>
+      <figcaption>クリックで等倍表示。② 自己実現的価値 × ③ PoD が理論の核心。</figcaption>
+    </figure>
+
+    <!-- mobile: native HTML version -->
+    <div class="diagram-native reveal" aria-label="構成図（テキスト版）">
+      <div class="fw">
+        <div class="fw__pillar">
+          <div class="ttl">思想 <small>ナラティブ（全層を貫く縦柱）</small></div>
+          <ul>
+            <li><b>OC的思想</b>「創業者の思い」</li>
+            <li><b>SP的思想</b>「国産素材と無添加に徹底的にこだわった」</li>
+          </ul>
+          <p class="note">思想の強度が高くなると、SP的な思想でもブランド化してOC的になる。</p>
+        </div>
+
+        <div class="fw__connect">
+          <div class="cbox"><b>ブランド共通のプロミス</b><span>SKUの集合体としてのブランドが何を約束するのかの定義</span></div>
+          <div class="down" aria-hidden="true">↓</div>
+          <div class="cbox"><b>商品ごと役割</b><span>ポートフォリオ内での商品ごとの役割を明確に</span></div>
+        </div>
+
+        <div class="fw__loop">⑥が積み上がると思想の強度が高くなる（思想へループ）</div>
+
+        <div class="fw__stack">
+          <div class="fw__step"><span class="n">6</span><span class="t">ブランドロイヤリティ</span></div>
+          <div class="fw__step"><span class="n">5</span><span class="t">時間経過の効果実感</span></div>
+          <div class="fw__step"><span class="n">4</span><span class="t">初動の効果実感</span></div>
+          <div class="fw__core">
+            <div class="fw__step"><span class="n">3</span><span class="t">PoD ＋ RTB</span></div>
+            <div class="x" aria-hidden="true">×<small>核心</small></div>
+            <div class="fw__step"><span class="n">2</span><span class="t">自己実現的価値</span></div>
+          </div>
+          <div class="fw__step"><span class="n">1</span><span class="t">フック</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 4. WHAT 各パート ============================ -->
+<section class="section" id="what-2" aria-labelledby="what-2-h">
+  <div class="wrap">
+    <p class="eyebrow">WHAT</p>
+    <h2 id="what-2-h" class="reveal">各パートの役割</h2>
+    <p class="lead reveal">思想という縦柱を軸に、①フックから⑥ロイヤリティまでが積み上がる。</p>
+
+    <div class="parts">
+
+      <article class="part is-thought span-2 reveal">
+        <div class="part__head"><span class="part__mark" aria-hidden="true">■</span><h3 class="part__name">思想・ナラティブ（縦柱）</h3></div>
+        <p class="part__role">全層を貫く縦の柱。意外を生む“組み替えの方向”を決める。</p>
+        <ul class="bullets">
+          <li>2種類：OC的思想（創業者の思い）と SP的思想（具体的なこだわり）。</li>
+          <li>接続層：ブランド共通プロミス（SKU集合体としての約束）／商品ごとの役割。</li>
+          <li>思想の強度が上がると、SP的こだわりがブランド化してOC的になる。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>「意外」は思想がないと作れない。常識を組み替える方向を決めるのが思想。</p>
+      </article>
+
+      <article class="part reveal">
+        <div class="part__head"><span class="part__mark num">1</span><h3 class="part__name">フック</h3></div>
+        <p class="part__role">手に取りたいとまず思わせるツカミ。商品企画の中で同時設計。</p>
+        <ul class="bullets">
+          <li>役割A・変換：②×③を一語で予告し、見た瞬間「欲しい」＝レスポンス力。</li>
+          <li>役割B・拡散：強いフックは自ら運ばれる（バイヤー・媒体・アルゴリズム）＝リーチ力。</li>
+          <li>3類型＝意外／新しい／すごい。→「意外」をデフォルトに（再現性が高く模倣されにくい）。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>②③・仕様と同時に設計する。後付けにすると何にも接続しない宙吊りコピーになる。</p>
+      </article>
+
+      <article class="part reveal">
+        <div class="part__head"><span class="part__mark num">2</span><h3 class="part__name">自己実現価値</h3></div>
+        <p class="part__role">顧客が「信じたい」こと。商品仕様と連携して設計。</p>
+        <ul class="bullets">
+          <li>機能的価値 → 情緒的価値 →「どんな自分でいられるか」へと積み上げる。</li>
+          <li>ブランドの押し付けでは届かない。顧客の自己像に手がかりがある。</li>
+          <li>フックはこの報酬を予告する装置。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>「信じたい」を担う柱。次の③（信じられる）と掛け算して初めて約束が成立する。</p>
+      </article>
+
+      <article class="part reveal">
+        <div class="part__head"><span class="part__mark num">3</span><h3 class="part__name">PoD ＋ RTB</h3></div>
+        <p class="part__role">顧客が「信じられる」根拠。商品仕様と連携して設計。</p>
+        <ul class="bullets">
+          <li>PoD＝②を実現する識別点。RTB＝その裏付け（Reason To Believe）。</li>
+          <li>②（信じたい）×③（信じられる）の掛け算が、本理論の核心。</li>
+          <li>両方が機能して初めて、ブランドの約束として成立する。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>②×③＝「信じたい×信じられる」。フックはこの核心を一語で予告する。</p>
+      </article>
+
+      <article class="part reveal">
+        <div class="part__head"><span class="part__mark num">4</span><h3 class="part__name">初動の効果実感</h3></div>
+        <p class="part__role">すぐ「効いてそう」を感じさせる設計＝初回の報酬実感。</p>
+        <ul class="bullets">
+          <li>v2：擬似ではなく「作られているが本物」に限定する。</li>
+          <li>手段：初期サインの可視化・儀式性・感覚設計など、実際に感じられる根拠。</li>
+          <li>薬機法・景表法（優良誤認）の隣接領域。実体のある根拠で設計する。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>「作られているが本物」。誠実性はロイヤリティループが複利で効くための前提条件。</p>
+      </article>
+
+      <article class="part reveal">
+        <div class="part__head"><span class="part__mark num">5</span><h3 class="part__name">時間経過の効果実感</h3></div>
+        <p class="part__role">中長期で感じる“効いてる”想定＝継続の報酬実感。</p>
+        <ul class="bullets">
+          <li>医薬品ではないため因果は立証しないが、実際に感じられる設計にする。</li>
+          <li>④（初動）→⑤（継続）の積み上げが、⑥（手放せない状態）につながる。</li>
+          <li>継続者の語りから「本物のサイン」の言語を抽出して設計に反映できる。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>初回と継続、二段の報酬実感を積み上げることでロイヤリティに接続する。</p>
+      </article>
+
+      <article class="part span-2 reveal">
+        <div class="part__head"><span class="part__mark num">6</span><h3 class="part__name">ブランドロイヤリティ ＋ ループ</h3></div>
+        <p class="part__role">手放せない“お守り”のような存在化。本理論の固有価値。</p>
+        <ul class="bullets">
+          <li>ループ：信者の積み上がり → 思想の強度が上がる → SPがOC化＝模倣不能の堀。</li>
+          <li>「売れ続ける」を生むのはこのループ。フロント最適化型モデルとの差別化点。</li>
+          <li>裏切られた瞬間に逆回転する。だから④⑤の誠実性が前提条件になる。</li>
+        </ul>
+        <p class="part__key"><b>要点：</b>信者ループと思想の縦柱が、本理論ならではの“堀”。ここを平らにしない。</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 5. HOW フック導出 ============================ -->
+<section class="section" id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <p class="eyebrow">HOW</p>
+    <h2 id="how-h" class="reveal">フック導出方法</h2>
+    <p class="lead reveal">②③・仕様を連携設計 → 常識の棚卸し → 7レバーで量産 → 2段ゲートで選抜。</p>
+
+    <div class="howgrid">
+      <ol class="steps reveal">
+        <li class="step">
+          <span class="step__no">STEP 1</span>
+          <h3>②③・仕様を連携設計</h3>
+          <p>信じさせたいこと×信じられる裏付けを、商品仕様に落とす。</p>
+        </li>
+        <li class="step">
+          <span class="step__no">STEP 2</span>
+          <h3>常識の棚卸し</h3>
+          <p>顧客が「今どう信じているか」を書き出す。※旧版に欠けていた前段。</p>
+        </li>
+        <li class="step">
+          <span class="step__no">STEP 3</span>
+          <h3>7レバーで量産</h3>
+          <p>その当たり前にレバーを当て、反フレーム候補を量産する。</p>
+        </li>
+        <li class="step">
+          <span class="step__no">STEP 4</span>
+          <h3>2段ゲートで選抜</h3>
+          <p>第1：逆張り×事実×思想整合／swap test。第2：自分ごと度・口承性・②接続・誠実性。</p>
+        </li>
+      </ol>
+
+      <div class="levers reveal">
+        <h3>意外を生む7レバー</h3>
+        <p class="levers__lead">まず顧客の「当たり前」を言語化し、各レバーを当てる。</p>
+        <ol>
+          <li>原因の付け替え（X→実はY）</li>
+          <li>前提の削除／反転</li>
+          <li>程度の再設定（多／頻／長 ⇄ 少／稀／短）</li>
+          <li>主語の付け替え（本人→別の対象）</li>
+          <li>場所の移動（外→内、症状→根因）</li>
+          <li>トレードオフの解体（両立する）</li>
+          <li>カテゴリーの再定義（棚が変わる）</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 6. VOC活用案 ============================ -->
+<section class="section" id="voc" aria-labelledby="voc-h">
+  <div class="wrap">
+    <h2 id="voc-h" class="reveal">VOC活用案 ── アライドアーキテクツ社（AA社）との協働の組み立て</h2>
+
+    <div class="voc-banner reveal">
+      <p><strong>理論v2の最大の空白＝「常識の棚卸し」。</strong> VOCは“意外”を生む装置ではなく、壊すべき“当たり前の地図”。ここに最も鋭く効く。</p>
+    </div>
+
+    <!-- 6-1 各層への貢献 -->
+    <div class="block reveal">
+      <h3 class="subhead">理論の各層への貢献</h3>
+      <p class="lead">AA社のVOC（SNS・レビュー・キャンペーン応募・パネル）を、各層に差し込む。</p>
+      <table class="voc-table">
+        <thead>
+          <tr><th>層</th><th>VOCの貢献</th><th>主なデータ</th></tr>
+        </thead>
+        <tbody>
+          <tr class="is-top">
+            <td class="layer" data-h="層">常識の棚卸し【最大】</td>
+            <td data-h="VOCの貢献">SNS・レビュー・応募文を7レバー軸で再分類し、カテゴリ別の常識マップを作る。</td>
+            <td class="data" data-h="主なデータ">SNS・レビュー・応募テキスト</td>
+          </tr>
+          <tr>
+            <td class="layer" data-h="層">② 自己実現価値の発見</td>
+            <td data-h="VOCの貢献">他のことを語る中で漏れる“なりたい自分”を抽出する。</td>
+            <td class="data" data-h="主なデータ">応募動機文・UGCの自己描写・継続者の語り</td>
+          </tr>
+          <tr>
+            <td class="layer" data-h="層">チラシ熱量テスト実装</td>
+            <td data-h="VOCの貢献">自分ごと度・口承性・「熱量」を概念段階で定量化する。</td>
+            <td class="data" data-h="主なデータ">パネル・SNS反応データ</td>
+          </tr>
+          <tr>
+            <td class="layer" data-h="層">④⑤ 本物のサインの言語化</td>
+            <td data-h="VOCの貢献">初動・継続の“効いてる”の語りから設計素材を抜く。</td>
+            <td class="data" data-h="主なデータ">購入後レビュー（初動／継続）</td>
+          </tr>
+          <tr>
+            <td class="layer" data-h="層">⑥ お守り化サインの検知</td>
+            <td data-h="VOCの貢献">名指し率・比較言語の消滅などループ作動の兆候を追う。</td>
+            <td class="data" data-h="主なデータ">ソーシャルリスニング（時系列）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 6-2 2モード -->
+    <div class="block reveal">
+      <h3 class="subhead">協働の組み立て（2モード）</h3>
+      <div class="modes">
+        <article class="mode a">
+          <h4>モードA：VOCを「入力」に</h4>
+          <p class="mode__tag">企画フェーズ</p>
+          <p class="flowline">カテゴリVOC収集 → 7レバー軸で再分類 → 常識マップ → 思想と掛けて反フレーム量産 → ②③・仕様・フックを同時設計</p>
+          <p class="deliver"><b>成果物：</b>カテゴリ別常識マップ／同時設計WS</p>
+        </article>
+        <article class="mode b">
+          <h4>モードB：VOCを「評価器」に</h4>
+          <p class="mode__tag">テスト〜運用フェーズ</p>
+          <p class="flowline">フック案をチラシ熱量テストで定量 → 実弾でA/B → 運用後VOCで④⑤の語り・⑥お守り化を検出 → 思想の磨き込み・新フックへループ</p>
+          <p class="deliver"><b>成果物：</b>フック評価レポート／思想ループ・ダッシュボード</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- 6-3 守るべき規律 -->
+    <div class="block reveal">
+      <div class="discipline">
+        <h3>守るべき規律</h3>
+        <ul>
+          <li><b>VOCで「意外」は出ない</b> ── 地図であって、壊し方はレバー×思想で人が作る。</li>
+          <li><b>VOC偏重は「すごい／差別化」へ寄る</b> ── VOCに思想を従属させない。</li>
+          <li><b>④⑤×VOCは法規制の隣接領域</b> ── UGC活用に法務・ガイドラインを必ず噛ませる。</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ 7. FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <p>パーチェイスフック理論｜ディスカッション用資料</p>
+    <!-- TODO: 公開・配布する場合は、ここに社名・コピーライト・問い合わせ先を差し替えてください。 -->
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

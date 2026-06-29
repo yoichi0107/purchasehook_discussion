@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1200" viewBox="0 0 1000 1200" role="img" aria-label="Placeholder for drugstore shelf photo">
+  <rect width="1000" height="1200" fill="#EDEDED"/>
+  <g fill="#DAE3F3">
+    <rect x="40" y="60"  width="920" height="250" rx="8"/>
+    <rect x="40" y="340" width="920" height="250" rx="8"/>
+    <rect x="40" y="620" width="920" height="250" rx="8"/>
+    <rect x="40" y="900" width="920" height="250" rx="8"/>
+  </g>
+  <g fill="#BDD7EE">
+    <rect x="70"  y="90"  width="90" height="190" rx="6"/>
+    <rect x="180" y="90"  width="90" height="190" rx="6"/>
+    <rect x="290" y="90"  width="90" height="190" rx="6"/>
+    <rect x="400" y="90"  width="90" height="190" rx="6"/>
+    <rect x="510" y="90"  width="90" height="190" rx="6"/>
+    <rect x="620" y="90"  width="90" height="190" rx="6"/>
+    <rect x="730" y="90"  width="90" height="190" rx="6"/>
+    <rect x="840" y="90"  width="90" height="190" rx="6"/>
+    <rect x="70"  y="370" width="90" height="190" rx="6"/>
+    <rect x="180" y="370" width="90" height="190" rx="6"/>
+    <rect x="290" y="370" width="90" height="190" rx="6"/>
+    <rect x="400" y="370" width="90" height="190" rx="6"/>
+    <rect x="510" y="370" width="90" height="190" rx="6"/>
+    <rect x="620" y="370" width="90" height="190" rx="6"/>
+    <rect x="730" y="370" width="90" height="190" rx="6"/>
+    <rect x="840" y="370" width="90" height="190" rx="6"/>
+    <rect x="70"  y="650" width="90" height="190" rx="6"/>
+    <rect x="180" y="650" width="90" height="190" rx="6"/>
+    <rect x="290" y="650" width="90" height="190" rx="6"/>
+    <rect x="400" y="650" width="90" height="190" rx="6"/>
+    <rect x="510" y="650" width="90" height="190" rx="6"/>
+    <rect x="620" y="650" width="90" height="190" rx="6"/>
+    <rect x="730" y="650" width="90" height="190" rx="6"/>
+    <rect x="840" y="650" width="90" height="190" rx="6"/>
+    <rect x="70"  y="930" width="90" height="190" rx="6"/>
+    <rect x="180" y="930" width="90" height="190" rx="6"/>
+    <rect x="290" y="930" width="90" height="190" rx="6"/>
+    <rect x="400" y="930" width="90" height="190" rx="6"/>
+    <rect x="510" y="930" width="90" height="190" rx="6"/>
+    <rect x="620" y="930" width="90" height="190" rx="6"/>
+    <rect x="730" y="930" width="90" height="190" rx="6"/>
+    <rect x="840" y="930" width="90" height="190" rx="6"/>
+  </g>
+  <g fill="#595959" font-family="Helvetica, Arial, sans-serif" text-anchor="middle">
+    <text x="500" y="600" font-size="40" font-weight="700">drugstore-shelf.jpg</text>
+    <text x="500" y="650" font-size="24">placeholder — replace with the store-shelf photo</text>
+  </g>
+</svg>
